@@ -1,0 +1,18 @@
+#include<stdio.h>
+int fact(int b){
+   int  facto=1;
+    if  (b==0||b==1){
+        return 1;
+    }
+    else{
+        return b*fact(b-1);
+    }
+}
+void main(){
+    // WAP to find factorial of a number. (Using loop & recursion)
+    int n;
+    printf("ENTER NO:");
+    scanf("%d",&n);
+int res=fact(n);
+printf("%d",res);
+}

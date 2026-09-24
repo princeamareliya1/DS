@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
+    int info;
+    struct Node *Link;
+};
+struct Node *A2 = NULL;
+void InsertAtFirst2(int x)
+{
+    struct Node *A21 = (struct Node *)malloc(sizeof(struct Node));
+    A21->info = x;
+    A21->Link = A2;
+    A2 = A21;
+}
+void display(struct Node *First)
+{
+    while (First != NULL)
+    {
+        printf("%d -->", First->info);
+        First = First->Link;
+    }
+    printf("\n");
+}
+int main()
+{
+    InsertAtFirst2(12);
+    InsertAtFirst2(14);
+    InsertAtFirst2(12);
+    InsertAtFirst2(22);
+    display(A2);
+    return 0;
+}

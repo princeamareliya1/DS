@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main(){
+    int n,j,m,i,s=0;
+    printf("enter  2 no :");
+    scanf("%d %d",&n,&m);
+    for ( i =n; i<=m; i++)
+    {   s=0;
+        for ( j = 2; i <=i; i++)
+        {
+        if(n%i==0)
+        {
+            s++;
+        
+        }    
+        }
+        
+    if(s==0)
+    {
+        printf("prime no");
+    }else{
+        printf("NOT A PRIME NO");
+    }    
+    }
+    
+    
+}
+//WAP to print prime numbers between given interval.

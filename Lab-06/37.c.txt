@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i;
+    printf("Enter NO:");
+    scanf("%d",&n);
+    int *a = (int *)malloc(n*sizeof(int));
+    for ( i = 0; i <n; i++)
+    {
+        printf("ENTER ELEMENT OF:");
+        scanf("%d",&a[i]);
+    }
+    int max=a[0];
+    for ( i = 0; i < n; i++)
+    {
+        if (max<=a[i])
+        {
+            max=a[i];
+        }
+    }
+    
+    printf("MAXIMUM OF ARRAY ELEMENT: %d",max);
+    return 0;
+}

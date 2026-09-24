@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main(){
+    // WAP to reverse a number.
+    int n;
+    printf("ENTER NO:");
+    scanf("%d",&n);
+    int rem;
+    int res=0;
+    while (n!=0)
+    {
+        rem=n%10;
+        res=res*10+rem;
+        n=n/10;
+    }
+    printf("%d",res);
+    
+}

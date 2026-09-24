@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
+    int info;
+    struct Node *Link;
+};
+struct Node *A1 = NULL;
+struct Node *A2 = NULL;
+void InsertAtFirst1(int x)
+{
+    struct Node *A12 = (struct Node *)malloc(sizeof(struct Node));
+    A12->info = x;
+    A12->Link = A1;
+    A1=A12;
+}
+void InsertAtFirst2(int x)
+{
+    struct Node *A21 = (struct Node *)malloc(sizeof(struct Node));
+    A21->info = x;
+    A21->Link= A2;
+    A2=A21;
+}
+void display(struct Node *First)
+{
+    while (First != NULL)
+    {
+        printf("%d -->", First->info);
+        First = First->Link;
+    }
+    printf("\n");
+}
+void is(struct Node *A1, struct Node *A2)
+{
+    int r = 0;
+    while (A1 != NULL && A2 != NULL)
+    {
+        if (A1->info != A2->info)
+        {
+            r = 1;
+            break;
+        }
+        else
+        {
+            A1 = A1->Link;
+            A2 = A2->Link;
+        }
+    }
+    if (A1 == NULL && A2 == NULL && r == 0)
+    {
+        printf("SAME LINKED LIST");
+    }
+    else
+    {
+        printf("NOT SAME");
+    }
+}
+int main()
+{
+    InsertAtFirst1(2);
+    InsertAtFirst1(5);
+    InsertAtFirst1(7);
+    InsertAtFirst1(9);
+
+    InsertAtFirst2(2);
+    InsertAtFirst2(5);
+    InsertAtFirst2(7);
+    InsertAtFirst2(9);
+    display(A1);
+    display(A2);
+    is(A1,A2);
+    return 0;
+}

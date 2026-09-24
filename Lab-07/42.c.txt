@@ -1,0 +1,42 @@
+/*42. Write a menu driven program to implement following operations on the singly
+linked list.
+ Insert a node at the front of the linked list.
+ Display all nodes.
+ Delete a first node of the linked list.
+ Insert a node at the end of the linked list.
+ Delete a last node of the linked list.
+ Delete a node from specified position.
+ Count the no. of nodes in the linked list.*/
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    
+    return 0;
+}
+struct Node{
+int info;
+struct Node * Next;
+};
+
+struct Node *First =NULL;
+
+void InsertAtFirst(int x){
+struct Node * A=(struct Node *)malloc(sizeof(struct Node));
+if (A==NULL)
+{
+   return;
+}
+
+A->info=x;
+A->Next=First;
+First=A;
+}
+void Display(struct Node *A)
+{
+    while (A!=NULL)
+    {
+        printf("%d",A->info);
+        A=A->Next;
+    }
+}

@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    int info;
+    struct Node *NEXT;
+};
+
+struct Node *A = NULL;
+void InsertAtFirst2(int x)
+{
+    struct Node *A1 = (struct Node *)malloc(sizeof(struct Node));
+    A1->info = x;
+    A1->NEXT= A;
+    A=A1;
+}
+void display(struct Node *First)
+{
+    while (First != NULL)
+    {
+        printf("%d -->", First->info);
+        First = First->NEXT;
+    }
+    printf("\n");
+}
+void dupli(struct Node *NEW)
+{
+    if (NEW==NULL)
+    {
+        printf("EMPTY ");
+    }
+    while (NEW!=NULL&&NEW->NEXT!=NULL)
+    {
+        if (NEW->info==NEW->NEXT->info)
+        {
+            struct Node *N=NEW->NEXT;
+            NEW->NEXT=NEW->NEXT->NEXT;
+            free(N);
+        }else{
+            NEW=NEW->NEXT;
+        }
+        
+    }
+    
+    
+}
+int main()
+{
+    
+
+    InsertAtFirst2(2);
+    InsertAtFirst2(5);
+    InsertAtFirst2(5);
+    InsertAtFirst2(9);
+    display(A);
+    
+    dupli(A);  
+    display(A); 
+    return 0;
+}

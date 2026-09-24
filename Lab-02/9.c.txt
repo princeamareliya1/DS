@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main(){
+    int n;
+    int b;
+    printf("ENTER Power:");
+    scanf("%d",&n);
+     printf("ENTER Base:");
+    scanf("%d",&b);
+    int res=1;
+for (int i = 1; i <=n; i++)
+{
+    res=res*b;
+}
+
+printf("%d",res);
+} 
+// WAP to find power of a number using loop

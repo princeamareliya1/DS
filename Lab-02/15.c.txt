@@ -1,0 +1,22 @@
+// WAP to print Armstrong number from 1 to 1000
+#include<stdio.h>
+void main(){
+    int n,i,s,a=0,w;
+    printf("enter no:");
+    scanf("%d",&n);
+    w=n;
+    while (n!=0)
+    {
+        s=n%10;
+        a=a+s*s*s;
+        n=n/10;
+    }
+    
+    if(a==w)
+    {
+        printf("Armstrong no");
+    }else{
+        printf("NOT A Armstrong NO");
+    }
+    
+}

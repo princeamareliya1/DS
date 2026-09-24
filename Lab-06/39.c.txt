@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    // WAP to check whether the string is Palindrome or not using Pointer.
+    int n, i, j, t;
+    char *b = (char *)malloc(100 * sizeof(char));
+    char *a = (char *)malloc(100* sizeof(char));
+    printf("enter string:\n");
+    scanf("%s",b);
+    strcpy(a,b);
+    strrev(a);
+    if (strcmp(a,b)==0)
+    {
+        printf("string is palindrom");
+    }
+    else{
+        printf("not palindrom string");
+    }
+    free(a);
+    free(b);
+    return 0;
+}
